@@ -13,12 +13,12 @@ const Navlinks = [
     link: '/#services',
   },
   {
-    id: 1,
+    id: 3,
     name: 'PORTOFOLIO',
     link: '/#portofolio',
   },
   {
-    id: 1,
+    id: 4,
     name: 'CONTACT',
     link: '/#contact',
   },
@@ -32,14 +32,15 @@ const Navbar = () => {
   };
   return (
     <div className="relative z-[1]">
-      <div className="fixed bg-gradient-to-r from-slate-300 to-slate-500 md:top-5 md:left-1/2 md:-translate-x-1/2 w-full md:w-[500px] md:py-0 shadow-md md:rounded-3xl">
+      <div className="fixed bg-gradient-to-r from-slate-300 to-slate-500 md:top-5 md:left-1/2 md:-translate-x-1/2 w-full md:w-[500px] md:py-0 shadow-xl md:rounded-3xl">
         <nav className="hidden md:block">
           <ul className="flex justify-center items-center gap-4">
             {Navlinks.map(({ id, name, link }) => (
               <li key={id} className="py-3">
-                <a href={link} className="text-sm font-medium font-serif hover:text-blue1 hover:border-b-2 border-blue1 transition-colors duration-500  ">
+                <a href={link} className="text-sm font-medium font-serif hover:text-light1 hover:border-b-2 border-light1 transition-colors duration-500">
                   {name}
                 </a>
+                {id < 4 && <span className="ml-4 text-gray-800">|</span>}
               </li>
             ))}
           </ul>
@@ -56,7 +57,7 @@ const Navbar = () => {
             <ul className="flex flex-col justify-center items-center gap-4">
               {Navlinks.map(({ id, name, link }) => (
                 <li key={id} className="py-3">
-                  <a href={link} className="text-sm font-medium font-serif hover:text-blue1 hover:border-b-2 border-blue1 transition-colors duration-500  ">
+                  <a href={link} className="text-sm font-medium font-serif hover:text-light1 hover:border-b-2 border-light1 transition-colors duration-500  ">
                     {name}
                   </a>
                 </li>
