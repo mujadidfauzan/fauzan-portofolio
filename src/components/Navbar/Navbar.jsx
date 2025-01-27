@@ -32,12 +32,12 @@ const Navbar = () => {
   };
   return (
     <div className="relative z-[1]">
-      <div className="fixed bg-gradient-to-r from-slate-300 to-slate-500 md:top-5 md:left-1/2 md:-translate-x-1/2 w-full md:w-[500px] md:py-0 shadow-xl md:rounded-3xl">
-        <nav className="hidden md:block">
+      <div className="fixed md:border-2 border-blue2 bg-light1 md:top-5 md:left-1/2 md:-translate-x-1/2 w-full md:w-[500px] md:py-0 shadow-xl md:rounded-3xl">
+        <nav className="hidden md:block ">
           <ul className="flex justify-center items-center gap-4">
             {Navlinks.map(({ id, name, link }) => (
               <li key={id} className="py-3">
-                <a href={link} className="text-sm font-medium font-serif hover:text-light1 hover:border-b-2 border-light1 transition-colors duration-500">
+                <a href={link} className="text-sm text-dark/60 font-semibold font-serif hover:text-dark border-dark hover:border-b  transition-all duration-500">
                   {name}
                 </a>
                 {id < 4 && <span className="ml-4 text-gray-800">|</span>}
