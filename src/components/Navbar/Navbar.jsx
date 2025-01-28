@@ -31,7 +31,7 @@ const Navbar = () => {
     setShowMenu(!showMenu);
   };
   return (
-    <div className="relative z-[1]">
+    <div className="relative z-20">
       <div className="fixed md:border-2 border-blue2 bg-light1 md:top-5 md:left-1/2 md:-translate-x-1/2 w-full md:w-[500px] md:py-0 shadow-xl md:rounded-3xl">
         <nav className="hidden md:block ">
           <ul className="flex justify-center items-center gap-4">

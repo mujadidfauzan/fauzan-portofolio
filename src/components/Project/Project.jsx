@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import heroImg from '../../assets/bangkit.jpg';
+import Modal from './Modal';
+import getImageUrl from '../../assets';
 
 const Card = ({ title, description, image }) => {
   return (
-    <div class="group relative cursor-pointer items-center justify-center overflow-hidden ease-in-out hover:shadow-xl hover:shadow-black/30 hover:scale-150 hover:z-50 transition-all duration-1000 rounded-md">
-      <div class="h-72 w-72">
-        <img class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125" src={image} alt="" />
+    <div className="group relative cursor-pointer items-center justify-center overflow-hidden ease-in-out hover:shadow-xl hover:shadow-black/30 hover:scale-150 hover:z-10 transition-all duration-1000 rounded-md">
+      <div className="h-72 w-72">
+        <img className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125" src={image} alt="" />
       </div>
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
-      <div class="absolute inset-0 flex translate-y-[50%] flex-col items-center justify-center px-5 text-center transition-all duration-500 group-hover:translate-y-0">
-        <h1 class="font-dmserif text-xl font-bold text-white">{title}</h1>
-        <p class="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis dolore adipisci placeat.</p>
-        <button class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">See More</button>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+      <div className="absolute inset-0 flex translate-y-[50%] flex-col items-center justify-center px-5 text-center transition-all duration-500 group-hover:translate-y-0">
+        <h1 className="font-dmserif text-xl font-bold text-white">{title}</h1>
+        <p className="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis dolore adipisci placeat.</p>
+        <button className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">See More</button>
       </div>
     </div>
   );
@@ -84,26 +86,28 @@ const Project = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-blue2 pt-24 pb-10">
+    <div className="min-h-screen bg-blue2 pt-24 pb-10 relative">
       <h1 className="text-4xl font-serif text-center">My Projects</h1>
       <nav className="mt-7">
         <div className="flex justify-center">
-          <ul className="flex gap-4 text-light1">
-            <li className="p-3 px-5 rounded-full bg-dark1 hover:scale-110 transition-all hover:shadow-xl duration-300 cursor-pointer">Robotics</li>
-            <li className="p-3 px-5 rounded-full bg-dark1">Internet of Things</li>
-            <li className="p-3 px-5 rounded-full bg-dark1">Machine Learning</li>
-            <li className="p-3 px-5 rounded-full bg-dark1">Website</li>
+          <ul className="flex gap-4 text-light1 text-sm mx-5 md:mx-0 text-center">
+            <li className="p-2 px-4 md:p-3 md:px-5 rounded-full bg-dark1 hover:scale-110 transition-all hover:shadow-xl duration-300 cursor-pointer my-auto">Robotics</li>
+            <li className="p-2 px-4 md:p-3 md:px-5 rounded-full bg-dark1 hover:scale-110 transition-all hover:shadow-xl duration-300 cursor-pointer">Internet of Things</li>
+            <li className="p-2 px-4 md:p-3 md:px-5 rounded-full bg-dark1 hover:scale-110 transition-all hover:shadow-xl duration-300 cursor-pointer">Machine Learning</li>
+            <li className="p-2 px-4 md:p-3 md:px-5 rounded-full bg-dark1 hover:scale-110 transition-all hover:shadow-xl duration-300 cursor-pointer my-auto">Website</li>
           </ul>
         </div>
       </nav>
 
-      <div class="flex justify-center mt-10">
-        <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
+      <div className="flex justify-center mt-10">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {projects.map((project, index) => (
-            <Card key={index} title={project.title} description={project.description} image={project.image} />
+            <Card key={index} title={project.title} description={project.description} image={getImageUrl('krai2.jpg')} />
           ))}
         </div>
       </div>
+
+      <Modal />
     </div>
   );
 };
