@@ -12,7 +12,7 @@ const Services = () => {
     .sort((a, b) => Number(a.name) - Number(b.name));
 
   return (
-    <div className="min-h-screen space-y-10 bg-light1 pt-24 pb-10 flex flex-col items-center justify-center">
+    <div className="min-h-screen space-y-10 bg-light1 pt-24 pb-10 ">
       <h1 className="text-4xl font-serif text-center">My Skills</h1>
 
       <Marquee speed={50} pauseOnHover gradient={true} gradientColor="#D3D9D4" className="hover:cursor-pointer z-0">

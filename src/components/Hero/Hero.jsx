@@ -14,7 +14,7 @@ const Hero = () => {
             </h1>
             <h1 className="text-3xl font-bold text-blue1 mt-4">
               I'm&nbsp; a&nbsp;
-              <ReactTyped style={{ color: '#212A31' }} backSpeed={50} strings={['Web Developer', 'Robotics and IoT Developer', 'AI/ML Developer', 'Developer.']} typeSpeed={80} typedRef={function noRefCheck() {}} />
+              <ReactTyped style={{ color: '#212A31' }} backSpeed={20} strings={['Web Developer', 'Robotics and IoT Developer', 'AI/ML Developer', 'Developer.']} typeSpeed={50} typedRef={function noRefCheck() {}} />
             </h1>
             <div className="flex items-center justify-center mt-6 gap-2 py-2">
               <a href="">

@@ -37,7 +37,7 @@ const Navbar = () => {
           <ul className="flex justify-center items-center gap-4">
             {Navlinks.map(({ id, name, link }) => (
               <li key={id} className="py-3">
-                <a href={link} className="text-sm text-dark/60 font-semibold font-serif hover:text-dark border-dark hover:border-b  transition-all duration-500">
+                <a href={link} className="text-sm text-dark/60 font-semibold font-serif hover:text-dark border-b border-light1 hover:border-dark  transition-all duration-500">
                   {name}
                 </a>
                 {id < 4 && <span className="ml-4 text-gray-800">|</span>}
