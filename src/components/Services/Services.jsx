@@ -2,7 +2,7 @@ import React from 'react';
 import Marquee from 'react-fast-marquee';
 
 const Services = () => {
-  const svgs = import.meta.glob('/src/assets/*.svg', { eager: true });
+  const svgs = import.meta.glob('/src/assets/logo/*.svg', { eager: true });
 
   const svgArray = Object.entries(svgs)
     .map(([key, value]) => ({
@@ -12,12 +12,12 @@ const Services = () => {
     .sort((a, b) => Number(a.name) - Number(b.name));
 
   return (
-    <div className="min-h-screen space-y-10 bg-light1 pt-24 pb-10 ">
-      <h1 className="text-4xl font-serif text-center">My Skills</h1>
+    <div id="skills" className="min-h-screen space-y-10 pt-24 pb-10 ">
+      <h1 className="text-3xl md:text-5xl  font-bold text-center mb-16 text-light1">My Skills</h1>
 
-      <Marquee speed={50} pauseOnHover gradient={true} gradientColor="#D3D9D4" className="hover:cursor-pointer z-0">
+      <Marquee speed={50} pauseOnHover gradient={true} gradientColor="#D3D9D4" className="hover:cursor-pointer z-0 bg-light1">
         {svgArray.map((svg, index) => (
-          <div key={index} className="h-16 aspect-square mx-8">
+          <div key={index} className="h-16 aspect-square mx-8 my-3">
             <img src={svg.component} className="h-full w-full" alt={svg.name} />
           </div>
         ))}
@@ -36,7 +36,6 @@ const Services = () => {
             </ul>
           </div>
 
-          {/* Card 2 */}
           <div className="bg-dark2 shadow-lg rounded-xl p-6 w-64 flex flex-col items-start space-y-4">
             <h2 className="text-2xl font-semibold">Machine Learning</h2>
             <ul className="list-disc pl-5 space-y-2">
@@ -48,7 +47,6 @@ const Services = () => {
             </ul>
           </div>
 
-          {/* Card 3 */}
           <div className="bg-dark2 shadow-lg rounded-xl p-6 w-64 flex flex-col items-start space-y-4">
             <h2 className="text-2xl font-semibold">Fullstack Web</h2>
             <ul className="list-disc pl-5 space-y-2">
@@ -60,7 +58,6 @@ const Services = () => {
             </ul>
           </div>
 
-          {/* Card 4 */}
           <div className="bg-dark2 shadow-lg rounded-xl p-6 w-64 flex flex-col items-start space-y-4">
             <h2 className="text-2xl font-semibold">Internet of Things</h2>
             <ul className="list-disc pl-5 space-y-2">
@@ -73,9 +70,9 @@ const Services = () => {
         </div>
       </div>
 
-      <Marquee speed={50} pauseOnHover gradient={true} direction="right" gradientColor="#D3D9D4" className="hover:cursor-pointer z-0">
+      <Marquee speed={50} pauseOnHover gradient={true} direction="right" gradientColor="#D3D9D4" className="hover:cursor-pointer z-0 bg-light1">
         {svgArray.map((svg, index) => (
-          <div key={index} className="h-16 aspect-square mx-8">
+          <div key={index} className="h-16 aspect-square mx-8 my-3">
             <img src={svg.component} className="h-full w-full" alt={svg.name} />
           </div>
         ))}

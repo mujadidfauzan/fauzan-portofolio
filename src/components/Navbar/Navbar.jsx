@@ -1,72 +1,90 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TfiMenu } from 'react-icons/tfi';
+import { IoMdClose } from 'react-icons/io';
 
 const Navlinks = [
-  {
-    id: 1,
-    name: 'ABOUT',
-    link: '/#',
-  },
-  {
-    id: 2,
-    name: 'SERVICES',
-    link: '/#services',
-  },
-  {
-    id: 3,
-    name: 'PORTOFOLIO',
-    link: '/#portofolio',
-  },
-  {
-    id: 4,
-    name: 'CONTACT',
-    link: '/#contact',
-  },
+  { id: 1, name: 'ABOUT', link: 'about' },
+  { id: 2, name: 'SKILLS', link: 'skills' },
+  { id: 3, name: 'PROJECTS', link: 'projects' },
+  { id: 4, name: 'CONTACT', link: 'contact' },
 ];
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
-  const toggleMenu = () => {
-    setShowMenu(!showMenu);
+  const handleScroll = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setShowMenu(false);
+      setActiveSection(id);
+    }
   };
+
+  useEffect(() => {
+    const handleScrollActive = () => {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.body.scrollHeight;
+
+      Navlinks.forEach(({ link }) => {
+        const section = document.getElementById(link);
+        if (section) {
+          const offset = section.offsetTop - 100; // Sesuaikan offset jika ada navbar fixed
+          const height = section.offsetHeight;
+
+          // Periksa apakah sudah mencapai bagian paling bawah
+          if (scrollPosition + windowHeight >= documentHeight - 10) {
+            setActiveSection('contact'); // Pastikan section terakhir aktif
+          } else if (scrollPosition >= offset && scrollPosition < offset + height) {
+            setActiveSection(link);
+          }
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScrollActive);
+    return () => window.removeEventListener('scroll', handleScrollActive);
+  }, []);
+
   return (
-    <div className="relative z-20">
-      <div className="fixed md:border-2 border-blue2 bg-light1 md:top-5 md:left-1/2 md:-translate-x-1/2 w-full md:w-[500px] md:py-0 shadow-xl md:rounded-3xl">
-        <nav className="hidden md:block ">
-          <ul className="flex justify-center items-center gap-4">
+    <header className="fixed top-0 left-0 w-full z-50">
+      {/* Desktop Navbar */}
+      <div className="hidden md:flex justify-center mx-auto py-3 fixed top-5 left-1/2 -translate-x-1/2 w-[90%] max-w-[600px] bg-light1/80 backdrop-blur-md border border-blue2 shadow-lg rounded-3xl transition-all duration-300 hover:opacity-100 opacity-80">
+        <nav>
+          <ul className="flex justify-center items-center gap-6">
             {Navlinks.map(({ id, name, link }) => (
-              <li key={id} className="py-3">
-                <a href={link} className="text-sm text-dark/60 font-semibold font-serif hover:text-dark border-b border-light1 hover:border-dark  transition-all duration-500">
+              <li key={id} className="relative">
+                <button onClick={() => handleScroll(link)} className={`text-sm font-medium transition-all duration-300 ${activeSection === link ? 'text-blue1 font-semibold' : 'text-dark2 hover:text-blue1'}`}>
                   {name}
-                </a>
-                {id < 4 && <span className="ml-4 text-gray-800">|</span>}
+                </button>
+                {id < Navlinks.length && <span className="ml-4 text-gray-500">|</span>}
               </li>
             ))}
           </ul>
         </nav>
-        {/* Mobile view  */}
-        <div className="md:hidden ">
-          <div className="flex justify-between py-3 px-2 z-10">
-            {/* Mobile Hamburger icon */}
-            <h1 className="bg-gradient-to-r from-slate-900 to-slate-500 bg-clip-text text-transparent text-xl font-bold font-serif">Fauzan</h1>
-
-            <TfiMenu onClick={toggleMenu} className="cursor-pointer transition-all" size={30} />
-          </div>
-          <div className={`w-full -z-10 bg-gradient-to-r from-slate-300 to-slate-500 transition-all duration-500 ease-in absolute ${showMenu ? 'top-[50px]' : 'top-[-490px]'}`}>
-            <ul className="flex flex-col justify-center items-center gap-4">
-              {Navlinks.map(({ id, name, link }) => (
-                <li key={id} className="py-3">
-                  <a href={link} className="text-sm font-medium font-serif hover:text-light1 hover:border-b-2 border-light1 transition-colors duration-500  ">
-                    {name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
       </div>
-    </div>
+
+      <div className="md:hidden w-full bg-light1 shadow-md py-4 px-5 flex justify-between items-center">
+        <h1 className="text-xl font-bold font-serif text-blue1">Fauzan</h1>
+        <button onClick={() => setShowMenu(!showMenu)} className="text-dark2 focus:outline-none">
+          {showMenu ? <IoMdClose size={30} /> : <TfiMenu size={30} />}
+        </button>
+      </div>
+
+      <div className={`fixed top-0 left-0 w-full h-screen bg-dark1/80 backdrop-blur-md flex justify-center items-center transform transition-all duration-500 ${showMenu ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
+        <ul className="text-center space-y-6">
+          {Navlinks.map(({ id, name, link }) => (
+            <li key={id}>
+              <button onClick={() => handleScroll(link)} className="text-xl text-light1 font-medium hover:text-blue1 transition-all duration-300">
+                {name}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </header>
   );
 };
 
