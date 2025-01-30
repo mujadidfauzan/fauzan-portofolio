@@ -1,4 +1,4 @@
-import { getImagesArray, getImagesByPrefix, getImageUrl } from '../../assets';
+import { getImagesArray, getImagesByPrefix } from '../../assets';
 
 const projects = [
   {
