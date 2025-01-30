@@ -2,7 +2,7 @@ import React from 'react';
 import { FaGithub, FaLinkedin, FaArrowDown } from 'react-icons/fa';
 import { ReactTyped } from 'react-typed';
 import { motion } from 'framer-motion';
-import heroImg from '../../assets/bangkit.jpg';
+import heroImg from '../../assets/bangkit.webp';
 
 const Hero = () => {
   return (

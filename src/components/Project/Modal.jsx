@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { IoChevronBackCircleOutline, IoChevronForwardCircleOutline, IoCloseCircleOutline } from 'react-icons/io5';
+import { FaGithub } from 'react-icons/fa';
 
-const Modal = ({ title, longDesc, img, techStack }) => {
+const Modal = ({ title, longDesc, img, techStack, link }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -68,6 +69,18 @@ const Modal = ({ title, longDesc, img, techStack }) => {
                         Project Overview
                       </h3>
                       <p className="text-lg leading-relaxed text-light2/90 font-medium whitespace-pre-line">{longDesc}</p>
+                    </div>
+
+                    <div className="flex">
+                      <a
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 border-2 border-blue1 px-5 py-2 text-light1 bg-dark2 rounded-full font-bold transition-all duration-500 hover:px-12 hover:bg-blue1 hover:text-white hover:shadow-lg hover:shadow-blue1/50"
+                      >
+                        <FaGithub className="text-xl transition-transform duration-500 group-hover:rotate-[360deg]" />
+                        Link to GitHub
+                      </a>
                     </div>
 
                     <div className="mt-8">

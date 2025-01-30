@@ -5,7 +5,7 @@ export function getImageUrl(fileName) {
 
 export function getImagesByPrefix(prefixes) {
   // Import semua gambar di folder "assets"
-  const allImages = import.meta.glob('/src/assets/*.{png,jpg,jpeg}', { eager: true });
+  const allImages = import.meta.glob('/src/assets/*.{png,jpg,jpeg,webp}', { eager: true });
 
   // Filter gambar berdasarkan prefix yang diberikan
   const filteredImages = Object.entries(allImages)
@@ -16,7 +16,7 @@ export function getImagesByPrefix(prefixes) {
 }
 
 export function getImagesArray(...filenames) {
-  const imageMap = import.meta.glob('/src/assets/*.{png,jpg,jpeg,svg}', { eager: true });
+  const imageMap = import.meta.glob('/src/assets/*.{png,jpg,jpeg,svg,webp}', { eager: true });
 
   return filenames.map((filename) => {
     const path = `/src/assets/${filename}`;

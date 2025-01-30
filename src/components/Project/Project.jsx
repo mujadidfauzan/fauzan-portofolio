@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
 import projects from './ProjectList';
 
-const Card = ({ title, description, image, techStack, longDesc }) => {
+const Card = ({ title, description, image, techStack, longDesc, link }) => {
   return (
     <div className="group relative items-center justify-center overflow-hidden ease-in-out hover:shadow-xl hover:shadow-black/30 md:hover:scale-125 hover:z-10 transition-all duration-1000 rounded-md">
       <div className="h-72 w-72">
@@ -12,7 +12,7 @@ const Card = ({ title, description, image, techStack, longDesc }) => {
       <div className="absolute inset-0 flex md:translate-y-[50%] flex-col items-center justify-center px-5 text-center transition-all duration-500 group-hover:translate-y-0">
         <h1 className="font-dmserif text-xl font-bold text-white">{title}</h1>
         <p className="mb-3 text-lg italic text-white opacity-100 md:opacity-0 transition-opacity duration-300 md:group-hover:opacity-100">{description}</p>
-        <Modal title={title} desc={description} img={image} techStack={techStack} longDesc={longDesc} />
+        <Modal title={title} desc={description} img={image} techStack={techStack} longDesc={longDesc} link={link} />
       </div>
     </div>
   );
@@ -45,7 +45,7 @@ const Project = () => {
 
   return (
     <div id="projects" className="min-h-screen pt-24 pb-10 relative">
-      <h1 className="text-3xl md:text-5xl font-bold text-center mb-16 text-light1">My Projects</h1>
+      <h1 className="text-4xl md:text-5xl font-bold text-center mb-16 text-light1">My Projects</h1>
 
       <nav className="mt-7">
         <div className="flex justify-center">
@@ -67,17 +67,17 @@ const Project = () => {
       <div className="flex justify-center mt-10">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {isLargeScreen
-            ? filteredProjects.map((project, index) => <Card key={index} title={project.title} description={project.description} image={project.image} techStack={project.techStack} longDesc={project.longDescription} />)
+            ? filteredProjects.map((project, index) => <Card key={index} title={project.title} description={project.description} image={project.image} techStack={project.techStack} longDesc={project.longDescription} link={project.link} />)
             : filteredProjects
                 .slice(0, visibleProjects)
-                .map((project, index) => <Card key={index} title={project.title} description={project.description} image={project.image} techStack={project.techStack} longDesc={project.longDescription} />)}
+                .map((project, index) => <Card key={index} title={project.title} description={project.description} image={project.image} techStack={project.techStack} longDesc={project.longDescription} link={project.link} />)}
         </div>
       </div>
 
       {!isLargeScreen && (
         <div className="flex justify-center mt-6">
           {visibleProjects < filteredProjects.length && (
-            <button onClick={loadMoreProjects} className="p-3 px-6 bg-blue1 text-white rounded-full shadow-xl transition-all hover:bg-blue-600">
+            <button onClick={loadMoreProjects} className="p-3 px-6 bg-blue1 text-white rounded-full shadow-xl transition-all hover:bg-dark2">
               Load More
             </button>
           )}

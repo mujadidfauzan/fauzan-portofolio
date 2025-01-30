@@ -13,7 +13,7 @@ const Services = () => {
 
   return (
     <div id="skills" className="min-h-screen space-y-10 pt-24 pb-10 ">
-      <h1 className="text-3xl md:text-5xl  font-bold text-center mb-16 text-light1">My Skills</h1>
+      <h1 className="text-4xl md:text-5xl  font-bold text-center mb-16 text-light1">My Skills</h1>
 
       <Marquee speed={50} pauseOnHover gradient={true} gradientColor="#D3D9D4" className="hover:cursor-pointer z-0 bg-light1">
         {svgArray.map((svg, index) => (
@@ -26,7 +26,7 @@ const Services = () => {
       <div className=" flex flex-col items-center px-4">
         <div className="flex flex-wrap justify-center gap-10 w-full max-w-6xl text-light1">
           {/* Card 1 */}
-          <div className="bg-dark2 shadow-lg rounded-xl p-6 w-64 flex flex-col items-start space-y-4">
+          <div data-aos="fade-up" className="bg-dark2 shadow-lg rounded-xl p-6 w-64 flex flex-col items-start space-y-4">
             <h2 className="text-2xl font-semibold">Robotics</h2>
             <ul className="list-disc pl-5 space-y-2">
               <li>C/C++</li>
@@ -36,7 +36,7 @@ const Services = () => {
             </ul>
           </div>
 
-          <div className="bg-dark2 shadow-lg rounded-xl p-6 w-64 flex flex-col items-start space-y-4">
+          <div data-aos="fade-up" data-aos-delay="300" className="bg-dark2 shadow-lg rounded-xl p-6 w-64 flex flex-col items-start space-y-4">
             <h2 className="text-2xl font-semibold">Machine Learning</h2>
             <ul className="list-disc pl-5 space-y-2">
               <li>Python</li>
@@ -47,7 +47,7 @@ const Services = () => {
             </ul>
           </div>
 
-          <div className="bg-dark2 shadow-lg rounded-xl p-6 w-64 flex flex-col items-start space-y-4">
+          <div data-aos="fade-up" data-aos-delay="500" className="bg-dark2 shadow-lg rounded-xl p-6 w-64 flex flex-col items-start space-y-4">
             <h2 className="text-2xl font-semibold">Fullstack Web</h2>
             <ul className="list-disc pl-5 space-y-2">
               <li>HTML/CSS</li>
@@ -58,7 +58,7 @@ const Services = () => {
             </ul>
           </div>
 
-          <div className="bg-dark2 shadow-lg rounded-xl p-6 w-64 flex flex-col items-start space-y-4">
+          <div data-aos="fade-up" data-aos-delay="700" className="bg-dark2 shadow-lg rounded-xl p-6 w-64 flex flex-col items-start space-y-4">
             <h2 className="text-2xl font-semibold">Internet of Things</h2>
             <ul className="list-disc pl-5 space-y-2">
               <li>Embedded System</li>
