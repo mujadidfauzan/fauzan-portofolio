@@ -40,7 +40,7 @@ const projects = [
   {
     title: 'Munashoroh Website',
     description: 'Developed the Munashoroh website as a frontend developer using React.js and Tailwind CSS to ensure a modern, responsive user interface.',
-    category: 'Web',
+    category: 'Web Apps',
     image: getImagesByPrefix(['munashoroh']),
     techStack: getImagesArray('1.webp', '2.webp', '9.webp', '7.webp'),
     longDescription: `As the Frontend Developer for the Munashoroh Website, I designed and implemented a modern, responsive, and user-friendly interface using React.js and Tailwind CSS. Key features and accomplishments include:
@@ -97,7 +97,7 @@ const projects = [
   {
     title: 'Landing Page Surabaya Dev Community',
     description: 'Developed a responsive landing page for Surabaya Dev using HTML and Bootstrap 5, providing concise information about the community.',
-    category: 'Web',
+    category: 'Web Apps',
     image: getImagesByPrefix(['surabaya']),
     techStack: getImagesArray('1.webp', '2.webp', '16.webp'),
     longDescription: `Developed a responsive and engaging landing page for Surabaya Dev, a community for developers in Surabaya, using HTML and Bootstrap 5. Hosted on Vercel, the page provides concise information about the community's activities and events, with easy navigation and a modern layout.`,
@@ -124,6 +124,52 @@ const projects = [
     Robot Analysis
 
     Initially, the lifting mechanism had two supports, but this caused instability and frequent jamming. The design was revised, replacing the two supports with four supports for better balance. Additionally, bolts were replaced with 3mm shafts and linear bearings, ensuring smoother movement and preventing jams.`,
+  },
+  {
+    title: 'System Resource Forecasting Model',
+    description: `Designed a predictive model to monitor CPU, RAM, and Disk usage trends using deep learning`,
+    category: 'Machine Learning',
+    image: getImagesByPrefix(['forecast']),
+    techStack: getImagesArray('10.webp', '13.webp'),
+    longDescription: `This project focuses on forecasting server resource usage — including CPU, RAM, and disk — using deep learning models for proactive system management. Two architectures were implemented: Gated Recurrent Unit (GRU) and Bi-directional Long Short-Term Memory (Bi-LSTM). Results showed that Bi-LSTM outperformed GRU in prediction accuracy, particularly for disk and CPU data. All prediction results were visualized using Grafana, providing the infrastructure team with early warnings and better operational decisions.`,
+  },
+  {
+    title: 'LLM-based Chatbot with RAG Approach',
+    description: `Built a customer service chatbot using Retrieval-Augmented Generation (RAG) and Deepseek R1`,
+    category: 'Machine Learning',
+    image: getImagesByPrefix(['gita']),
+    techStack: getImagesArray('10.webp', '13.webp'),
+    longDescription: `This project involved developing a smart customer service chatbot named GITA for PT GIT's official website. The chatbot leverages a Retrieval-Augmented Generation (RAG) approach, combining the power of a Large Language Model (Deepseek R1 accessed via OpenRouter API) and a FAISS-based vector database. It delivers accurate, context-aware responses based on internal company documents. The main goal was to provide fast and intelligent customer support, reducing workload on support teams and improving user satisfaction across the digital platform.`,
+  },
+  {
+    title: 'Vision-Language Model for Document Extraction',
+    description: `Developed a document digitization tool using the Donut Vision-Language model for invoice data`,
+    category: 'Machine Learning',
+    image: getImagesByPrefix(['donut']),
+    techStack: getImagesArray('10.webp', '13.webp'),
+    longDescription: `This project focused on automating the extraction of critical data from financial documents, especially invoices, using a Vision-Language model called Donut (Document Understanding Transformer). The model was fine-tuned with internal company datasets, achieving over 96% Tree Edit Distance accuracy and 84% F1 score. This significantly streamlined the document processing workflow, replacing the previously manual and time-consuming data entry steps with a highly accurate and efficient AI solution.`,
+  },
+  {
+    title: 'FinMate – AI-Powered Family Financial Planner',
+    description: `Developed an AI-based financial planning app with OCR, voice input, and smart dashboards for families`,
+    category: 'Machine Learning',
+    image: getImagesByPrefix(['fin']),
+    techStack: getImagesArray('gem.webp', 'fast.webp', 'fire.webp', '10.webp', '13.webp'),
+    longDescription: `FinMate is a mobile-first financial planning application designed for families to collaboratively manage their finances. The app features multi-user account access where parents can track their children's financial behavior. Users can log transactions manually, through OCR (using the Donut model), or via voice (using Whisper). 
+
+The backend is built with FastAPI and Firestore, while the frontend is built using React Native. Users can access a personalized dashboard displaying their income, expenses, financial risk level, and family-based financial insights. The AI-powered chatbot offers contextual financial suggestions, while the app sends intelligent notifications and reminders. The project integrates modern document understanding, speech recognition, and scoring algorithms to make personal finance intuitive, fast, and collaborative.`,
+    link: 'https://github.com/mujadidfauzan/finmate-Monorepo',
+  },
+  {
+    title: 'DebtWatch – Smart Web App for Debt Monitoring',
+    description: `Led development of an AI-integrated debt tracking platform with chatbot and user-specific financial scoring`,
+    category: 'Machine Learning',
+    image: getImagesByPrefix(['debt']),
+    techStack: getImagesArray('gem.webp', 'fast.webp', 'fire.webp', '10.webp', '13.webp'), // e.g. FastAPI, React, Tailwind
+    longDescription: `DebtWatch is a full-stack AI-driven web application developed to helps users track debts, assets, financial dependents, and simulate loan risks through a personalized dashboard. 
+
+The app features an integrated chatbot that acts as a virtual debt consultant, built using FastAPI for the backend and React + Tailwind for the frontend. Users can input loan details, view repayment schedules, and receive calculated risk scores. The system supports data storage for family members, allowing a holistic view of financial responsibilities. DebtWatch was created as a solution for intelligent debt awareness.`,
+    link: 'https://github.com/mujadidfauzan/debtWatch-Full',
   },
 ];
 

@@ -54,7 +54,7 @@ const About = () => {
             </div>
           </div>
 
-          <div data-aos="fade-up" data-aos-delay="300" className="inline-block relative border">
+          <div className="inline-block relative border">
             <a href={cvPdf} download="cv-mujadid" className="flex items-center gap-2 px-8 py-3 bg-accent text-light1 rounded-full font-bold transition-all duration-300 hover:px-12">
               <FiDownload className="text-xl animate-bounce" />
               View Full Resume

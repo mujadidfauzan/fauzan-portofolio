@@ -10,12 +10,10 @@ const Hero = () => {
       <div className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="w-full flex flex-col items-center justify-center text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark2 leading-tight">
-              Hi, I'm <span className="text-blue1">Fauzan</span>
-            </h1>
-            <h1 className="text-3xl font-bold text-blue1 mt-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-light1 leading-tight">Hi, I'm Fauzan</h1>
+            <h1 className="text-3xl font-bold text-light1 mt-4">
               I'm&nbsp; a&nbsp;
-              <ReactTyped style={{ color: '#212A31' }} backSpeed={20} strings={['Web Developer', 'Robotics Engineer', 'AI/ML Developer', 'IoT Enthusiast']} typeSpeed={50} loop />
+              <ReactTyped style={{ color: '#D3D9D4' }} backSpeed={20} strings={['Web Developer', 'Robotics Engineer', 'AI/ML Developer', 'IoT Enthusiast']} typeSpeed={50} loop />
             </h1>
             <p className="text-lg text-light1 mt-6 max-w-md">Deep passion for innovation and technology.</p>
 

@@ -37,7 +37,7 @@ const Project = () => {
 
   const filteredProjects = projects.filter((project) => selectedCategory === 'All' || project.category === selectedCategory);
 
-  const categories = ['All', 'Robotics', 'IoT', 'Machine Learning', 'Web'];
+  const categories = ['All', 'Robotics', 'IoT', 'Machine Learning', 'Web Apps'];
 
   const loadMoreProjects = () => {
     setVisibleProjects(visibleProjects + 6);
